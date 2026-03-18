@@ -3,22 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Beacon Studio</title>
+  <title>Home</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet" />
   <style>
     :root {
       --bg: #f3efe8;
-      --ink: #1f2937;
+      --text: #1f2937;
       --muted: #4b5563;
       --card: #ffffff;
       --line: #e5e7eb;
       --brand: #0f766e;
       --brand-strong: #115e59;
-      --accent: #f59e0b;
-      --shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
-      --radius: 18px;
     }
 
     * {
@@ -28,190 +25,62 @@
     body {
       margin: 0;
       min-height: 100vh;
-      font-family: "Manrope", "Segoe UI", sans-serif;
-      color: var(--ink);
-      background:
-        radial-gradient(1200px 480px at 12% -10%, #ffe2ba 0%, rgba(255, 226, 186, 0) 65%),
-        radial-gradient(900px 450px at 95% 5%, #b7ece6 0%, rgba(183, 236, 230, 0) 60%),
-        var(--bg);
       display: grid;
       place-items: center;
-      padding: 28px;
-    }
-
-    .shell {
-      width: min(980px, 100%);
-      background: linear-gradient(160deg, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.87));
-      backdrop-filter: blur(6px);
-      border: 1px solid rgba(255, 255, 255, 0.9);
-      border-radius: 28px;
-      box-shadow: var(--shadow);
-      overflow: hidden;
-    }
-
-    .hero {
-      padding: clamp(28px, 4vw, 48px);
-      display: grid;
-      gap: 20px;
+      padding: 24px;
+      font-family: "Manrope", "Segoe UI", sans-serif;
+      color: var(--text);
       background:
-        linear-gradient(120deg, rgba(15, 118, 110, 0.12), rgba(245, 158, 11, 0.14)),
-        #fff;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      width: fit-content;
-      background: #ffffff;
-      color: #0f766e;
-      border: 1px solid #c7f0eb;
-      border-radius: 999px;
-      padding: 7px 14px;
-      font-size: 0.85rem;
-      font-weight: 700;
-      letter-spacing: 0.02em;
-      text-transform: uppercase;
-    }
-
-    h1 {
-      margin: 0;
-      font-family: "Fraunces", Georgia, serif;
-      font-size: clamp(2rem, 5vw, 3.4rem);
-      line-height: 1.05;
-      max-width: 17ch;
-    }
-
-    p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 1.05rem;
-      max-width: 58ch;
-      line-height: 1.65;
-    }
-
-    .actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 8px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-      border-radius: 12px;
-      border: 1px solid transparent;
-      padding: 11px 16px;
-      font-weight: 700;
-      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-    }
-
-    .btn:hover {
-      transform: translateY(-1px);
-    }
-
-    .btn-primary {
-      color: #fff;
-      background: var(--brand);
-      box-shadow: 0 10px 22px rgba(15, 118, 110, 0.26);
-    }
-
-    .btn-primary:hover {
-      background: var(--brand-strong);
-    }
-
-    .btn-outline {
-      color: var(--ink);
-      border-color: #d1d5db;
-      background: #fff;
-    }
-
-    .grid {
-      padding: clamp(24px, 3vw, 38px);
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-      gap: 14px;
+        radial-gradient(800px 320px at 12% 0%, #ffe7c4 0%, rgba(255, 231, 196, 0) 70%),
+        radial-gradient(900px 380px at 100% 10%, #c2eee9 0%, rgba(194, 238, 233, 0) 62%),
+        var(--bg);
     }
 
     .card {
+      width: min(560px, 100%);
       background: var(--card);
       border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 18px;
-      display: grid;
-      gap: 10px;
+      border-radius: 20px;
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
+      padding: clamp(22px, 5vw, 36px);
+      text-align: center;
     }
 
-    .card h2 {
-      margin: 0;
-      font-size: 1.02rem;
-      font-weight: 700;
+    h1 {
+      margin: 0 0 12px;
+      font-family: "Fraunces", Georgia, serif;
+      font-size: clamp(2rem, 6vw, 2.8rem);
+      line-height: 1.15;
     }
 
-    .card p {
-      font-size: 0.95rem;
-      line-height: 1.55;
+    p {
+      margin: 0 0 22px;
+      color: var(--muted);
+      line-height: 1.6;
     }
 
-    .dot {
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--brand), var(--accent));
-      box-shadow: 0 0 0 5px rgba(16, 185, 129, 0.12);
+    a {
+      display: inline-block;
+      text-decoration: none;
+      background: var(--brand);
+      color: #fff;
+      font-weight: 600;
+      padding: 10px 16px;
+      border-radius: 12px;
+      transition: background 0.2s ease, transform 0.2s ease;
     }
 
-    @media (max-width: 560px) {
-      .hero {
-        padding: 22px;
-      }
-
-      .grid {
-        padding: 18px;
-      }
-
-      p {
-        font-size: 0.98rem;
-      }
+    a:hover {
+      background: var(--brand-strong);
+      transform: translateY(-1px);
     }
   </style>
 </head>
 <body>
-  <main class="shell">
-    <section class="hero">
-      <span class="badge">Modern Go Starter</span>
-      <h1>Build quick. Ship clean. Keep it simple.</h1>
-      <p>
-        This starter page is designed for small Go web servers that still want a sharp interface.
-        Pair it with server-rendered templates or static routes and you are ready to launch.
-      </p>
-      <div class="actions">
-        <a class="btn btn-primary" href="/static/form.html">Open Contact Form</a>
-        <a class="btn btn-outline" href="#features">See Highlights</a>
-      </div>
-    </section>
-
-    <section id="features" class="grid">
-      <article class="card">
-        <div class="dot"></div>
-        <h2>Fast to Customize</h2>
-        <p>Single-file styles, clear variables, and no framework lock-in.</p>
-      </article>
-      <article class="card">
-        <div class="dot"></div>
-        <h2>Mobile Friendly</h2>
-        <p>Fluid spacing and responsive typography with no extra setup.</p>
-      </article>
-      <article class="card">
-        <div class="dot"></div>
-        <h2>Server Friendly</h2>
-        <p>Works perfectly as static files or as shared template fragments.</p>
-      </article>
-    </section>
+  <main class="card">
+    <h1>Welcome</h1>
+    <p>A clean starting page for your Go web server.</p>
+    <a href="/static/form.html">Open Form</a>
   </main>
 </body>
 </html>
