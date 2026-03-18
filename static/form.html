@@ -1,0 +1,238 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Send Request</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #f3efe8;
+      --surface: #ffffff;
+      --surface-soft: #fcfcfc;
+      --text: #111827;
+      --muted: #4b5563;
+      --line: #d8dee7;
+      --brand: #0f766e;
+      --brand-strong: #115e59;
+      --warn: #b45309;
+      --radius: 16px;
+      --shadow: 0 20px 40px rgba(15, 23, 42, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Manrope", "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(780px 340px at 6% 0%, #ffe6c2 0%, rgba(255, 230, 194, 0) 67%),
+        radial-gradient(980px 460px at 100% 8%, #bdeee9 0%, rgba(189, 238, 233, 0) 58%),
+        var(--bg);
+      display: grid;
+      place-items: center;
+      padding: 26px;
+    }
+
+    .wrap {
+      width: min(720px, 100%);
+      background: linear-gradient(170deg, rgba(255, 255, 255, 0.97), rgba(255, 255, 255, 0.88));
+      border: 1px solid rgba(255, 255, 255, 0.88);
+      border-radius: 26px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .head {
+      padding: clamp(24px, 4vw, 34px);
+      border-bottom: 1px solid var(--line);
+      background: linear-gradient(120deg, rgba(15, 118, 110, 0.08), rgba(245, 158, 11, 0.12));
+    }
+
+    .eyebrow {
+      margin: 0;
+      color: var(--brand);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 800;
+      font-size: 0.78rem;
+    }
+
+    h1 {
+      margin: 10px 0 8px;
+      font-family: "Fraunces", Georgia, serif;
+      font-size: clamp(1.7rem, 5vw, 2.5rem);
+      line-height: 1.15;
+    }
+
+    .sub {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.6;
+      max-width: 56ch;
+    }
+
+    form {
+      padding: clamp(20px, 4vw, 32px);
+      display: grid;
+      gap: 16px;
+      background: var(--surface);
+    }
+
+    .field {
+      display: grid;
+      gap: 8px;
+    }
+
+    label {
+      font-weight: 700;
+      font-size: 0.94rem;
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      border: 1px solid var(--line);
+      background: var(--surface-soft);
+      border-radius: 12px;
+      padding: 12px 13px;
+      color: var(--text);
+      font: inherit;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+
+    textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      outline: none;
+      border-color: var(--brand);
+      box-shadow: 0 0 0 4px rgba(15, 118, 110, 0.16);
+      background: #fff;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .hint {
+      margin: -4px 0 0;
+      font-size: 0.84rem;
+      color: var(--warn);
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 4px;
+    }
+
+    button,
+    .link {
+      border: 0;
+      border-radius: 12px;
+      padding: 11px 16px;
+      font: inherit;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    button {
+      background: var(--brand);
+      color: #fff;
+    }
+
+    button:hover {
+      background: var(--brand-strong);
+      transform: translateY(-1px);
+    }
+
+    .link {
+      border: 1px solid var(--line);
+      color: var(--text);
+      background: #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .link:hover {
+      transform: translateY(-1px);
+    }
+
+    @media (max-width: 640px) {
+      .split {
+        grid-template-columns: 1fr;
+      }
+
+      .actions {
+        flex-direction: column;
+      }
+
+      button,
+      .link {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="head">
+      <p class="eyebrow">Quick Intake</p>
+      <h1>Tell us what you are building.</h1>
+      <p class="sub">Submit this form to start a project request or feature discussion. It is intentionally clean, lightweight, and easy to hook into any Go handler.</p>
+    </section>
+
+    <form action="#" method="post">
+      <div class="split">
+        <div class="field">
+          <label for="name">Full Name</label>
+          <input id="name" name="name" type="text" placeholder="Jane Doe" required />
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="jane@example.com" required />
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="project">Project Type</label>
+        <select id="project" name="project">
+          <option>Landing Page</option>
+          <option>Admin Dashboard</option>
+          <option>API Integration</option>
+          <option>Other</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="details">Project Details</label>
+        <textarea id="details" name="details" placeholder="Share the goal, timeline, and any important constraints."></textarea>
+        <p class="hint">Tip: include deadline and expected deliverables.</p>
+      </div>
+
+      <div class="actions">
+        <button type="submit">Send Request</button>
+        <a class="link" href="/static/index.html">Back to Home</a>
+      </div>
+    </form>
+  </main>
+</body>
+</html>
